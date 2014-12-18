@@ -38,7 +38,7 @@ class MyMenu(wx.Frame):
         self.file_convert_text = wx.StaticText(self.panel, -1, 
             "Select a file to convert.")
         self.file_text_box = wx.TextCtrl(self.panel, -1,
-            "Select a file to get started!", style=wx.TE_READONLY)
+            "Select a file!", style=wx.TE_READONLY)
         self.load_file_button = wx.Button(self.panel, -1, "Load Files")
         self.load_file_button.Bind(wx.EVT_BUTTON, self.SelectFileDialog)
 
