@@ -32,7 +32,7 @@ class MyMenu(wx.Frame):
 
         # all elements will be declared in the order in which
         # they appear, top to bottom, left to right.
-        self.intro_text = wx.StaticText(self.panel, -1, "Cheap Image Converter v 0.1")
+        self.intro_text = wx.StaticText(self.panel, -1, "Image Converter v 0.1")
 
         # Load files button and binding
         self.file_convert_text = wx.StaticText(self.panel, -1, 
@@ -61,7 +61,7 @@ class MyMenu(wx.Frame):
         self.mid_row2 = wx.BoxSizer(wx.HORIZONTAL)
         self.bot_row = wx.BoxSizer(wx.HORIZONTAL)
 
-        self.top_row.Add(self.intro_text, 1, wx.ALIGN_LEFT) 
+        self.top_row.Add(self.intro_text, 1, wx.ALIGN_LEFT, wx.EXPAND) 
 
         self.mid_row.Add(self.file_convert_text, 1, wx.ALIGN_RIGHT)
         self.mid_row.Add(self.file_text_box, 1, wx.ALIGN_RIGHT)
@@ -72,10 +72,10 @@ class MyMenu(wx.Frame):
 
         self.bot_row.Add(self.go_button, 0, wx.ALIGN_CENTER)
 
-        self.master_container.Add(self.top_row, 1, wx.ALIGN_CENTER | wx.EXPAND)
-        self.master_container.Add(self.mid_row, 1, wx.ALIGN_CENTER | wx.EXPAND)
-        self.master_container.Add(self.mid_row2, 1, wx.ALIGN_CENTER | wx.EXPAND)
-        self.master_container.Add(self.bot_row, 1, wx.ALIGN_CENTER | wx.EXPAND)
+        self.master_container.Add(self.top_row, 1, wx.ALIGN_CENTER | wx.EXPAND | wx.TOP | wx.LEFT | wx.RIGHT, border=10)
+        self.master_container.Add(self.mid_row, 1, wx.ALIGN_CENTER | wx.EXPAND | wx.LEFT | wx.RIGHT, border=10)
+        self.master_container.Add(self.mid_row2, 1, wx.ALIGN_CENTER | wx.EXPAND | wx.LEFT | wx.RIGHT, border=10)
+        self.master_container.Add(self.bot_row, 1, wx.ALIGN_CENTER | wx.EXPAND | wx.BOTTOM | wx.LEFT | wx.RIGHT, border=10)
 
         self.panel.SetSizer(self.master_container)
 
