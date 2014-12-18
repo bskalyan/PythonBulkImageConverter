@@ -124,13 +124,9 @@ class MyMenu(wx.Frame):
         if os.path.splitext(image)[1].lower() == convert_to.lower():
             self.UtilityInfoDialog("%s is already of filetype %s" % (x, convert_to), "Error")
         else:
-            try:
-                Image.open(image).save(os.path.splitext(x)[0] + ".%s" % (convert_to))
-                self.UtilityInfoDialog("Image conversion successful. \
-                    Check source directory for new file.")
-            except:
-                self.UtilityInfoDialog("Unable to convert file! Check path and try again.",
-                    "Error!")
+            Image.open(image).save("%s-%s.%s" % (os.path.splitext(image)[0], convert_to, convert_to))
+            self.UtilityInfoDialog("Image conversion successful. Check source directory for new file.", 
+                "Success!")
 
 class MyApp(wx.App):
     def OnInit(self):
