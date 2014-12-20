@@ -17,7 +17,7 @@ class MyMenu(wx.Frame):
         super(MyMenu, self).__init__(parent, id, title)
 
         valid_targets = ["jpg", "gif", "pcx", 
-            "msp", "png", "ppm", "tiff"]
+            "msp", "png", "ppm", "tiff", "bmp"]
 
         # time for a redesign!
         # Cheap Image Converter v .1
@@ -35,7 +35,7 @@ class MyMenu(wx.Frame):
 
         # Load files button and binding
         self.file_convert_text = wx.StaticText(self.panel, -1,
-            "Select a file to convert.")
+            "Select a file to convert. Use ctrl+left click to select multiple files.")
         self.file_text_box = wx.TextCtrl(self.panel, -1,
             "Select a file!", style=wx.TE_READONLY)
         self.load_file_button = wx.Button(self.panel, -1, "Load Files")
